@@ -99,7 +99,7 @@ It was not a functional delivery that allows navigating between pages, so it is 
 
 
 ## Build Procedures
-Open the HTML files.
+Open the HTML files, priorizing the files in the 'OculosDeSol' folder. 'OculosDeSol' is inside the 'HTMLs' folfer.
 
 
 
