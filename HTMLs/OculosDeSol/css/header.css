@@ -1,0 +1,55 @@
+.header {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 44px;
+}
+
+.header-supra {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.header-supra a {
+    color: var(--w10);
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.search {
+    border: 2px solid var(--w10);
+    width: 570px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.conta-sacola {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.conta-sacola li a {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.header-infra {
+    background-color: var(--w10);
+    padding: 16px;
+}
+
+.header-infra a {
+    color: var(--w1);
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.header-infra ul {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+}

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Produto</title>
+    </head>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        html {
+            --w1: #FBFDFF;
+            --w2: #EEF0F2;
+            --w4: #C4C5C7;
+            --w8: #4B4C4D;
+            --w9: #2D2E2E;
+            --w10: #0F0F0F;
+            --r5: #CE3D37;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: var(--w11);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 44px;
+        }
+
+        .header-supra {
+            display: flex;
+            justify-content: space-between;
+            padding: 24px;
+        }
+
+        .header-supra a {
+            color: var(--w10);
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+
+        .search {
+            border: 2px solid var(--w10);
+            width: 570px;
+            padding: 12px 16px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .conta-sacola {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .conta-sacola li a {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .header-infra {
+            background-color: var(--w10);
+            padding: 16px;
+        }
+
+        .header-infra a {
+            color: var(--w1);
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+
+        .header-infra ul {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+        }
+
+        .footer {
+            margin-top: 120px;
+            font-family: 'Montserrat', monospace;
+            background-color: var(--w10);
+            padding: 68px ;
+        }
+
+        .footer h3 {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--w1);
+            margin-bottom: 36px;
+        }
+
+        .footer a,
+        .footer li {
+            font-size: 20px;
+            color: var(--w2);
+            font-weight: 400;
+        }
+
+        .footer ul {
+            margin-bottom: 48px;
+        }
+
+        main {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .grid-product {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .principal {
+            background-color: var(--w2);
+            height: 640px;
+            margin-bottom: 40px;
+        }
+
+        .principal,
+        .extras div {
+            border-radius: 4px;
+            background-color: var(--w2);
+        }
+
+        .extras {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .extras div {
+            height: 200px;
+        }
+
+        .produto {
+            display: grid;
+            justify-content: left;
+        }
+
+        .produto h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        .titulo-subtitulo h1 {
+            font-weight: 500;
+            font-size: 48px;
+            margin-bottom: 24px;
+            color: var(--w10);
+        }
+
+        .titulo-subtitulo p {
+            font-weight: 300;
+            font-size: 24px;
+        }
+
+        .titulo-subtitulo {
+            margin-bottom: 40px;
+        }
+
+        .sepp-produto {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: var(--w4);
+            margin-bottom: 36px;
+        }
+
+        .preco {
+            margin-bottom: 56px;
+        }
+
+        .preco .total {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--r5);
+        }
+
+        .preco span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .preco span p {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--w8)
+        }
+
+        .cores {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .cores button {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--w8);
+            padding: 16px 36px;
+            background-color: transparent;
+            border-radius: 4px;
+            border: 1px solid var(--w4);
+        }
+
+        .quantidade {
+            margin-bottom: 120px;
+        }
+
+        .quantidade button {
+            border: 1px solid var(--w4);
+            border-radius: 4px;
+            padding: 10px;
+            background-color: transparent;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .controls input {
+            margin: 0px 8px;
+            width: 48px;
+            height: 48px;
+            border: 1px solid var(--w4);
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .add-product {
+            padding: 24px 48px;
+            background-color: var(--r5);
+            color: var(--w1);
+            font-size: 24px;
+            font-weight: 500;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .info h2 {
+            color: var(--w10);
+            font-size: 40px;
+            font-weight: 500px;
+            margin-bottom: 36px;
+        }
+
+        .info p {
+            color: var(--w9);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 75ch;
+            margin-bottom: 64px;
+        }
+
+        .info li {
+            color: var(--w9);
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+
+        .info strong {
+            font-weight: 400;
+        }   
+
+        .sepp {
+            display: block;
+            background-color: var(--w9);
+            height: 2px;
+            position: relative;
+            top: 24px;
+            left: 0px;
+        }
+
+        .footer li {
+            margin-bottom: 12px;
+        }
+
+        .grid-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .social {
+            display: flex;
+            gap: 48px;
+        }
+    </style>
+
+    <body>
+        <header class="header">
+            <div class="header-supra container">
+                <img src="./assets/logo/FOZOCO.svg" alt="Logo Fozoco">
+
+                <input type="text" class="search">
+    
+                <ul class="conta-sacola">
+                    <li>
+                        <a href="">
+                            <span>minha conta</span>
+                            <img src="./assets/header/account_circle.svg" alt="icon account">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>sacola</span>
+                            <img src="./assets/header/shopping_bag.svg" alt="icon bag">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="header-infra">
+                <ul class="container">
+                    <li><a href="">feminino</a></li>
+                    <li><a href="">masculino</a></li>
+                    <li><a href="">óculos de grau</a></li>
+                    <li><a href="">óculos de sol</a></li>
+                    <li><a href="">óculos anti luz azul</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="grid-product">
+                <div class="imagens">
+                    <div class="principal"></div>
+                    
+                    <div class="extras">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+    
+                <div class="produto">
+                    <div class="titulo-subtitulo">
+                        <h1>Óculos Addis</h1>
+                        <p>anti luz azul</p>
+                    </div>
+    
+                    <span class="sepp-produto"></span>
+    
+                    <div class="preco">
+                        <p class="total">R$ 199, 99</p>
+                        <span>
+                            <img src="./assets/credit_card.svg" alt="">
+                            <p>3X de R$ 56, 66 sem juros</p>
+                        </span>
+                    </div>
+                    
+                    <div>
+                        <h2>Cor:</h2>
+                        <ul class="cores">
+                            <li><button>preto</button></li>
+                            <li><button>vermelho</button></li>
+                            <li><button>azul</button></li>
+                            <li><button>amarelo</button></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="quantidade">
+                        <h2>Quantidade:</h2>
+                        
+                        <div class="controls">
+                            <button>
+                                <img src="./assets/remove.svg" alt="">
+                            </button>
+                            <input type="number" name="" id="">
+                            <button>
+                                <img src="./assets/add.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+    
+                    <button class="add-product">ADICIONAR À SACOLA</button>
+                </div>
+            </div>
+
+            <div class="info">
+                <h2>Sobre o produto</h2>
+                <p>Exclusiva, a Camisa Personalizável Listrada Marinho permite a personalização com as suas iniciais, localizado no punho direito. O modelo foi desenvolvido em tecido tricoline que é super respirável e ideal para usar nos dias mais quentes, além transitar muito bem pelas estações. A camisa conta com a modelagem Slim, ajusta ao corpo de forma confortável, valorizando sua silhueta.</p>
+
+                <h2>Especificações técnicas</h2>
+                <ul>
+                    <li>comprimento: <strong>136mm</strong></li>
+                    <li>altura: <strong>53mm</strong></li>
+                    <li>haste: <strong>140mm</strong></li>
+                    <li>espaço nariz: <strong>16mm</strong></li>
+                    <li>material: <strong>LIGA</strong></li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="grid-footer container">
+                <img src="./assets/logo/FOZOCO-W.svg" alt="Logo Fozoco">
+
+                <div>
+                    <h3>FALE CONOSCO</h3>
+                    <ul>
+                        <li>+55 16 8900-0000</li>
+                        <li>contato@fozoco.com</li>
+                        <span class="sepp"></span>
+                    </ul>
+
+                    <ul>
+                        <li>37.211.060/0001-63</li>
+                        <span class="sepp"></span>
+                    </ul>
+
+                    <ul class="social">
+                        <li><img src="./assets/social/facebook-w.svg" alt="Logo Facebook"></li>
+                        <li><img src="./assets/social/twitter-w.svg" alt="Logo Facebook"></li>
+                        <li><img src="./assets/social/instagram-w.svg" alt="Logo Instagram"></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>INFORMAÇÕES</h3>
+                    <ul>
+                        <li><a href="">minha conta</a></li>
+                        <li><a href="">perguntas frequentes</a></li>
+                        <li><a href="">termos e condições</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>PRODUTOS</h3>
+                    <ul>
+                        <li><a href="">feminino</a></li>
+                        <li><a href="">masculino</a></li>
+                        <li><a href="">óculos de grau</a></li>
+                        <li><a href="">óculos de sol</a></li>
+                        <li><a href="">óculos anti luz azul</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
