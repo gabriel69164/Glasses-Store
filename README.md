@@ -68,6 +68,18 @@ Each customer record includes: id, first name, last name, phone, address, email 
 
 
 
+## Mockup
+https://www.figma.com/file/34UUtssIUTS8EVjNKBXPKz/mockup?type=design&t=xeenbYgZbPp7wCJR-1
+
+
+
+
+## Navigation diagram
+https://miro.com/app/board/uXjVMLKnbQs=/?share_link_id=761055462924
+
+
+
+
 ## Comments About the Code
 N/A
 
